@@ -625,6 +625,8 @@ EOF
     else
       bench new-site "${FRAPPE_DEFAULT_SITE}" \
         --force \
+        --db-type postgres \
+        --db-host ${DB_HOST} \
         --db-name ${DB_NAME} \
         --admin-password ${ADMIN_PASSWORD} \
         | sudo tee -a "${FRAPPE_WD}/logs/${NODE_TYPE}-docker.log" 3>&1 1>&2 2>&3 \
